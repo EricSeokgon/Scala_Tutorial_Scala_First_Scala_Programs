@@ -15,4 +15,8 @@ object CodeBlocks {
     println(meth1)
     println(meth2)
   }
+  val x3:String= {
+    val d = new java.util.Date()
+    d.toString()
+  }
 }
