@@ -1,12 +1,16 @@
 package DataType
 
 object LiteralValues {
-  def main(args: Array[String]): Unit = {
-    val b1 = true
-    val b2 = false
+  def main(args: Array[String]) {
+    println(hello("This is a test"));
 
-    println(b1)
-    println(b2)
   }
+
+  def hello(name: String) =
+    s"""Welcome!
+       Hello, $name!
+       * (Star!!)
+       |Hi.
+       |    whitespace.""".stripMargin
 
 }
