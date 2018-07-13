@@ -27,7 +27,7 @@ object Ranges {
     val v6 = 1.1 to 10.3 by 3.1     // Double
     println(v6)
 
-    val v7 = 'a' to 'g ' by 3         // Char
+    val v7 = 'a' to 'g' by 3         // Char
     println(v7)
 
     val v8 = BigInt(1) to BigInt(10) by 3
