@@ -1,6 +1,8 @@
 package Statement
 
-object ScalaPatternMatching extends App{
+import scala.util.Random
+
+object ScalaPatternMatching extends App {
   def printNum(int: Int) {
     int match {
       case 0 => println("Zero")
@@ -8,6 +10,7 @@ object ScalaPatternMatching extends App{
       case _ => println("more than one")
     }
   }
+
   printNum(0)
   printNum(1)
   printNum(2)
@@ -16,6 +19,15 @@ object ScalaPatternMatching extends App{
     case 0 => 0
     case 1 => 1
     case n => fibonacci(n - 1) + fibonacci(n - 2)
+  }
+
+  val x: Int = Random.nextInt(10)
+
+  x match {
+    case 0 => "zero"
+    case 1 => "one"
+    case 2 => "two"
+    case _ => "many"
   }
 
 }
