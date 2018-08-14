@@ -35,10 +35,11 @@ object ScalaPatternMatching extends App {
     case 2 => "two"
     case _ => "many"
   }
-  matchTest(3)  // many
-  matchTest(1)  // one
 
-  val anyList= List(1, "A", 2, 2.5, 'a')
+  matchTest(3) // many
+  matchTest(1) // one
+
+  val anyList = List(1, "A", 2, 2.5, 'a')
 
   for (m <- anyList) {
     m match {
@@ -49,4 +50,11 @@ object ScalaPatternMatching extends App {
     }
   }
 
+  def test2(in: Any) = in match {
+    case s: String => "String, length " + s.length
+    case i: Int if i > 0 => "Natural Int"
+    case i: Int => "Another Int"
+    case a: AnyRef => a.getClass.getName
+    case _ => "null"
+  }
 }
