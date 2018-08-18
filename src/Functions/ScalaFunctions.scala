@@ -1,6 +1,6 @@
 package Functions
 
-class ScalaFunctions {
+object ScalaFunctions {
   def main(args: Array[String]): Unit = {
     def hello() = {"Hello World!"}
 
