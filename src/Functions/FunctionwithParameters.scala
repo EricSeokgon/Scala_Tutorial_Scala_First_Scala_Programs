@@ -2,7 +2,8 @@ package Functions
 
 object FunctionwithParameters {
   def main(args: Array[String]) {
-    def square (i:Int) = {i*i}
-    println(square(2) );
+    def add(x: Int, y: Int): Int = { x + y }
+
+    println(add(5, 5) );
   }
 }
