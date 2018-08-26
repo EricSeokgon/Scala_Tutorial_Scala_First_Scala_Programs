@@ -1,5 +1,5 @@
 package `class`
 
-class SomeClass(val underlying: Int) extends AnyVal{
-
+class SomeClass(val i: Int) extends AnyVal {
+  def twice() = i*2
 }
