@@ -13,4 +13,10 @@ class sec01 {
   = p :: Nil
   list(1)
   list("Hello")
+
+  def largest(as: Int*): Int = as.reduceLeft((a, b)=> a max b)
+  largest(1)
+  largest(2,3,99)
+  largest(3,22,33,22)
+
 }
