@@ -22,4 +22,14 @@ class sec01 {
   def mkString[T](as: T*):String = as.foldLeft("")(_ + _.toString)
   def sum[T <:Number](as:T*): Double = as.foldLeft(0d)(_ + _.doubleValue)
 
+  def readLines(br: BufferedReader) = {
+    var ret: List[String] = Nil
+    def readAll():Unit= br.readLinematch {
+      case null =>
+      case s => ret ::= s ; readAll()
+    }
+    readAll()
+    ret.reverse
+  }
+
 }
