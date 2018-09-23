@@ -1,5 +1,7 @@
 package `class`
 
+import java.io.BufferedReader
+
 class sec01 {
   def myMethod(): String = "hadeslee.tistory.com"
 
@@ -11,25 +13,44 @@ class sec01 {
 
   def list[T](p: T): List[T]
   = p :: Nil
+
   list(1)
   list("Hello")
 
-  def largest(as: Int*): Int = as.reduceLeft((a, b)=> a max b)
-  largest(1)
-  largest(2,3,99)
-  largest(3,22,33,22)
+  def largest(as: Int*): Int = as.reduceLeft((a, b) => a max b)
 
-  def mkString[T](as: T*):String = as.foldLeft("")(_ + _.toString)
-  def sum[T <:Number](as:T*): Double = as.foldLeft(0d)(_ + _.doubleValue)
+  largest(1)
+  largest(2, 3, 99)
+  largest(3, 22, 33, 22)
+
+  def mkString[T](as: T*): String = as.foldLeft("")(_ + _.toString)
+
+  def sum[T <: Number](as: T*): Double = as.foldLeft(0d)(_ + _.doubleValue)
 
   def readLines(br: BufferedReader) = {
     var ret: List[String] = Nil
-    def readAll():Unit= br.readLinematch {
+
+    def readAll(): Unit = br.readLinematch {
       case null =>
-      case s => ret ::= s ; readAll()
+      case s => ret ::= s; readAll()
     }
+
     readAll()
     ret.reverse
+  }
+
+  abstract class Base {
+    def thing: String
+  }
+  class One extends Base {
+    def thing= "Moof"
+  }
+
+  class Two extends One{
+    override val thing= (new java.util.Date).toString
+  }
+  class Three extends One{
+    override lazy val thing= super.thing + (new java.util.Date).toString
   }
 
 }
