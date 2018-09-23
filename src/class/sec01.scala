@@ -20,5 +20,6 @@ class sec01 {
   largest(3,22,33,22)
 
   def mkString[T](as: T*):String = as.foldLeft("")(_ + _.toString)
+  def sum[T <:Number](as:T*): Double = as.foldLeft(0d)(_ + _.doubleValue)
 
 }
