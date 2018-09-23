@@ -19,4 +19,6 @@ class sec01 {
   largest(2,3,99)
   largest(3,22,33,22)
 
+  def mkString[T](as: T*):String = as.foldLeft("")(_ + _.toString)
+
 }
